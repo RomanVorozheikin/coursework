@@ -36,37 +36,37 @@ public class Main {
     }
 
     static void printEmployee() {
-        for (int i = 0; i < employees.length; i++) {
-            if (employees[i]!=null) {
-                System.out.println(employees[i]);
+        for (Employee employee:employees) {
+            if (employees!=null) {
+                System.out.println(Arrays.toString(employees));
             }
         }
     }
 
-    static int minSalary() {
-        int min = employees[0].getSalary();
+    static Employee minSalary() {
+        Employee min = employees[0];
             for (int i = 1; i < employees.length; i++) {
-                if (employees[i]!=null&&employees[i].getSalary() < min) {
-                    min = employees[i].getSalary();
+                if (employees[i] != null && employees[i].getSalary() < min.getSalary()) {
+                    min = employees[i];
+                }
             }
-        }
         return min;
     }
 
-    static int maxSalary() {
-        int max = employees[0].getSalary();
+    static Employee maxSalary() {
+        Employee max = employees[0];
         for (int i = 1; i < employees.length; i++) {
-            if (employees[i]!=null&&employees[i].getSalary() > max) {
-                max = employees[i].getSalary();
+            if (employees[i]!=null&&employees[i].getSalary() > max.getSalary()) {
+                max = employees[i];
             }
         }
         return max;
     }
 
-    static int avgSalary() {
+    static double avgSalary() {
         int count = 0;
-        int sum=0;
-        int avg=0;
+        double sum=0;
+        double avg=0;
         for (Employee employees : employees) {
             if (employees != null) {
                 sum+= employees.getSalary();
@@ -78,9 +78,9 @@ public class Main {
     }
 
     static void printFullName() {
-        for (int i = 0; i < employees.length; i++) {
-            if (employees[i]!= null) {
-                System.out.println(employees[i].getFullName());
+        for (Employee employee:employees) {
+            if (employee!= null) {
+                System.out.println(employee.getFullName());
             }
         }
     }
