@@ -3,7 +3,7 @@ package ru.roman;
 public class Employee {
     private final String fullName;
     private int department;
-    private int salary;
+    private double salary;
     private static int countId;
     private final int id;
 
@@ -30,15 +30,15 @@ public class Employee {
         return id;
     }
 
-    public int getSalary() {
+    public double getSalary() {
         return salary;
     }
 
-    public void setSalary() {
-        this.salary=salary;
+    public void setSalary(double salary) {
+        this.salary = salary;
     }
 
-    public void setDepartment() {
+    public void setDepartment(int department) {
         this.department=department;
     }
 
